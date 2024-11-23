@@ -22,7 +22,7 @@ const prompt = ChatPromptTemplate.fromMessages([
 ]);
 
 const model = new ChatOpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY || "-",
+  openAIApiKey: process.env.KRISHNA_OPENAI_API_KEY || "-",
   modelName: process.env.OPENAI_MODEL || "davinci",
   temperature: 0.2,
 });
@@ -37,12 +37,10 @@ const parser = StructuredOutputParser.fromZodSchema(
           .describe(
             "Facial expression to be used by the AI. Select from: smile, sad, angry, surprised, funnyFace, and default"
           ),
-        animation: z
-          .string()
-          .describe(
-            `Animation to be used by the AI. Select from: Idle, TalkingOne, TalkingThree, SadIdle, 
+        animation: z.string().describe(
+          `Animation to be used by the AI. Select from: Idle, TalkingOne, TalkingThree, SadIdle, 
             Defeated, Angry, Surprised, DismissingGesture, and ThoughtfulHeadShake.`
-          ),
+        ),
       })
     ),
   })

@@ -3,8 +3,8 @@ import path from "path";
 import { execCommand } from "./files.mjs";
 
 async function convertAudioToMp3({ audioData }) {
-  const dir = 'tmp';
-  if (!fs.existsSync(dir)){
+  const dir = "tmp";
+  if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
   const inputPath = path.join(dir, "input.webm");

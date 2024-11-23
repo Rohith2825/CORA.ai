@@ -2,8 +2,8 @@ import { audioFileToBase64, readJsonTranscript } from "../utils/files.mjs";
 import dotenv from "dotenv";
 dotenv.config();
 
-const openAIApiKey = process.env.OPENAI_API_KEY;
-const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
+const openAIApiKey = process.env.KRISHNA_OPENAI_API_KEY;
+const elevenLabsApiKey = process.env.NEW_ELEVEN_LABS_API_KEY;
 
 async function sendDefaultMessages({ userMessage }) {
   let messages;
@@ -55,4 +55,21 @@ const defaultResponse = [
   },
 ];
 
-export { sendDefaultMessages, defaultResponse };
+const krishnaMessages = [
+  {
+    text: "Hey there... How was your day?",
+    audio: await audioFileToBase64({ fileName: "audios/intro_0.wav" }),
+    lipsync: await readJsonTranscript({ fileName: "audios/intro_0.json" }),
+    facialExpression: "smile",
+    animation: "TalkingOne",
+  },
+  {
+    text: "I'm Jack, your personal AI assistant. I'm here to help you with anything you need.",
+    audio: await audioFileToBase64({ fileName: "audios/intro_1.wav" }),
+    lipsync: await readJsonTranscript({ fileName: "audios/intro_1.json" }),
+    facialExpression: "smile",
+    animation: "TalkingTwo",
+  },
+];
+
+export { sendDefaultMessages, defaultResponse,krishnaMessages };
