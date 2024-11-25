@@ -7,7 +7,7 @@
 
 
 # There is two seperate versions for this submission
-### (i) Enterprise version - Custom DB, backend deployment with a female avatar representing the brand CORA fed with Compliance and Regulation sepcific data <br>
+### (i) Enterprise version - Custom DB, backend deployment with a female avatar representing the brand CORA fed with Compliance and Regulation sepcific data interface powered by CONVAI<br>
 ### (ii) Community version - Simple OpenAI implementation with default ReadyPlayerMe avatar followed by detailed implemenetation help
 
 <br><br>
